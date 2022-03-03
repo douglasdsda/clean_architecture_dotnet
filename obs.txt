@@ -1,0 +1,37 @@
+add-migration Inicial  -- comando inicial criar migration
+update-database -- gerar o banco e tb atualiza
+
+
+
+add-migration SeedProducts -- adiciona um nova migration
+
+dotnet ef --version -- verificar a versao
+ dotnet tool install --global dotnet-ef --version 6.0.1 -- instalar
+ dotnet tool update --global dotnet-ef  -- fazer update global
+
+
+ pacote infra data
+    add-migration AddIdentityTables
+    update-database
+
+
+    --exemplo:
+    dotnet ef migrations script = inicio
+dotnet ef migrations add init = cria migrations
+dotnet ef database update = cria o banco
+
+
+-- instalar sqllite, em data
+  <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.1" />
+
+
+
+      "DefaultConnection": "Data Source=D:\\database\\clean\\dados.db;",
+    "sqlString": "server=localhost;port=3306;database=clean_architecture;uid=root;pwd=123456"
+
+
+
+
+
+    teste@gmail.com
+Numsey#2021

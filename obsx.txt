@@ -1,0 +1,35 @@
+1- dotnet new "tipo de proj" --name "nome do projeto"
+dotnet new sln --name CleanArchMvc  // A SOLUCAO
+
+2(outros) - 
+  * dotnet new classlib --name CleanArchMvc.Domain
+  * dotnet new classlib --name CleanArchMvc.Application
+  * dotnet new classlib --name CleanArchMvc.Infra.Data
+  * dotnet new classlib --name CleanArchMvc.Infra.IoC
+  * dotnet new mvc --name CleanArchMvc.WebUI
+
+  TESTES:
+   * dotnet new xunit --name CleanArchMvc.Domain.Tests 
+
+  
+
+  ADICIONAR NA SOLUCAO:
+
+  dotnet sln add CleanArchMvc.sln CleanArchMvc.Domain/CleanArchMvc.Domain.csproj
+  dotnet sln add CleanArchMvc.sln CleanArchMvc.Application/CleanArchMvc.Application.csproj
+  dotnet sln add CleanArchMvc.sln CleanArchMvc.Infra.Data/CleanArchMvc.Infra.Data.csproj
+  dotnet sln add CleanArchMvc.sln CleanArchMvc.Infra.IoC/CleanArchMvc.Infra.IoC.csproj
+  dotnet sln add CleanArchMvc.sln CleanArchMvc.WebUI/CleanArchMvc.WebUI.csproj
+
+  dotnet run --project CleanArchMvc.WebUI/CleanArchMvc.WebUI.csproj
+
+  REFERENCIA
+
+  dotnet add CleanArchMvc.Domain.Tests reference CleanArchMvc.Domain/CleanArchMvc.Domain.csproj
+  dotnet add CleanArchMvc.Infra.Data reference CleanArchMvc.Domain/CleanArchMvc.Domain.csproj
+  dotnet add CleanArchMvc.Infra.IoC reference CleanArchMvc.Domain/CleanArchMvc.Domain.csproj
+  dotnet add CleanArchMvc.Infra.IoC reference CleanArchMvc.Application/CleanArchMvc.Application.csproj
+  dotnet add CleanArchMvc.Infra.IoC reference CleanArchMvc.Infra.Data/CleanArchMvc.Infra.Data.csproj
+  dotnet add CleanArchMvc.WebUI reference CleanArchMvc.Infra.IoC/CleanArchMvc.Infra.IoC.csproj
+
+
